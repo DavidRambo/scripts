@@ -1,0 +1,9 @@
+* Personal Scripts
+This is a collection of scripts I use to automate some routine tasks.
+
+** undervolt.sh
+Undervolts my nvidia gpu.
+It also needs to be paired with a +100mhz overclock through Green With Envy.
+** usb-wakeup-disabled.py
+Disables the wake-from-sleep functionality of specific USB peripherals.
+It needs to be run after every reboot.
