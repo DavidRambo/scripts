@@ -11,6 +11,7 @@
 
 # The following values identify the peripherals I want to disable from waking
 # the system.
+
 # Logitech USB Receiver for wireless mouse:
 # idVendor: 046d
 
@@ -19,6 +20,9 @@
 
 # foostan Corne keyboard
 # idVendor: 4653
+
+# Boardsource Lulu
+# idVendor: 4273
 
 # I could implement a dict: [{'LG': '046d\n'}, {'Preonic': '03a8\n'}] etc.
 # This script checks for the presence of these values in the 'idVendor' text
@@ -33,7 +37,7 @@ import os
 
 # idVendor values for USB peripherals
 # include the newline code b/c that is included in the text file
-vendor_ids = ['046d\n', '03a8\n', '4653\n']
+vendor_ids = ['046d\n', '03a8\n', '4653\n', '4273\n']
 
 dirs_list = glob('/sys/bus/usb/devices/*/')
 
