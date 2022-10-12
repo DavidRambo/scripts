@@ -37,7 +37,7 @@ import os
 
 # idVendor values for USB peripherals
 # include the newline code b/c that is included in the text file
-vendor_ids = ['046d\n', '03a8\n', '4653\n', '4273\n']
+vendor_ids = ['046d', '03a8', '4653', '4273']
 
 dirs_list = glob('/sys/bus/usb/devices/*/')
 
@@ -49,12 +49,11 @@ for directory in dirs_list:
     if os.path.isfile(vendor_path):
         # read each idVendor text file and check for presence of vendor id
         with open(vendor_path, 'r') as vendor:
-            # set text of idVendor to a string
-            vendor_id = vendor.readlines()
-            # Note: the readlines() method creates a list of strings
+            # read the first line, which contains the vendor id
+            vendor_id = vendor.readline()
 
             # Check if the output of 'directory/idVendor' is in vendor_ids
-            if vendor_id[0] in vendor_ids:
+            if vendor_id.rstrip() in vendor_ids:
                 # then proceed to change 'directory/power/wakeup' to 'disabled'
                 wakeup_path = directory + 'power/wakeup'
                 with open(wakeup_path, 'w') as wakeup:
