@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # Script to check for specific USB devices that are enabled to wake the
 # computer from suspend and then disable them.
 # The setting is in '/sys/bus/usb/devices/{device number}/power/wakeup'
