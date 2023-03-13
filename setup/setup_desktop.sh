@@ -1,4 +1,9 @@
 #!/bin/bash
 # Setup fresh install of Ubuntu derivative
 
-sudo apt update
+./dotfiles.sh
+./aptinstall.sh
+./gsettings.sh
+
+# Upgrade packages
+sudo apt upgrade -y
