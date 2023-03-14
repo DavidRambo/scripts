@@ -1,5 +1,5 @@
 #!/bin/bash
-# Setup fresh install of Ubuntu derivative
+# Setup fresh install of Pop!_OS
 
 ./dotfiles.sh
 ./aptinstall.sh
