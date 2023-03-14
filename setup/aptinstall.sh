@@ -19,6 +19,8 @@ install font-manager
 install fonts-font-awesome
 install fzf
 install htop
+install python3-pip
+install python3-venv
 install tree
 install vim
 install zsh
