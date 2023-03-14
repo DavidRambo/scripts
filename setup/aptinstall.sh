@@ -33,6 +33,7 @@ install llvm
 install make
 install python3-pip
 install python3-venv
+install ripgrep
 install tk-dev 
 install tree
 install vim
