@@ -10,7 +10,7 @@ function install {
         echo "Installing: ${1}..."
         sudo apt install -y $1
     else
-        echo "Alreday installed: ${1}"
+        echo "Already installed: ${1}"
     fi
 }
 
