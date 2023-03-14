@@ -22,3 +22,5 @@ install htop
 install tree
 install vim
 install zsh
+install zsh-syntax-highlighting
+install zsh-autosuggestions
