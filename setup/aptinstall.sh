@@ -31,6 +31,7 @@ install libxml2-dev
 install libxmlsec1-dev
 install llvm
 install make
+install npm
 install python3-pip
 install python3-venv
 install ripgrep
