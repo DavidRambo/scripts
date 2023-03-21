@@ -1,9 +1,13 @@
 * Personal Scripts
 This is a collection of scripts I use to automate some routine tasks.
 
+** setup
+These are scripts to automate setting up a fresh install of Pop!_OS.
+Note that the gnome_extensions.sh in ./programs/ is not included in the overall setup script.
+
 ** undervolt.sh
 Undervolts my nvidia gpu.
-It also needs to be paired with a +100mhz overclock through Green With Envy.
+It also needs to be paired with a 100mhz overclock through Green With Envy.
 ** usb-wakeup-disabled.py
 Disables the wake-from-sleep functionality of specific USB peripherals.
 It needs to be run after every reboot.
