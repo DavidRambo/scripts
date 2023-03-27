@@ -39,7 +39,8 @@ if check_installed nvim; then
 else
     echo "Downloading and installing: nvim..."
     curl https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb -o /home/david/Downloads/nvim-linux64.deb
-    sudo dpkg -i /home/david/Downloads/nvim-linux64.deb
+    # sudo dpkg -i /home/david/Downloads/nvim-linux64.deb
+    sudo apt install -y /home/david/Down/nvim-linux64.deb
     rm /home/david/Downloads/nvim-linux64.deb
 fi
 
