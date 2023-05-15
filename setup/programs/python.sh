@@ -1,13 +1,13 @@
 #!/bin/bash
 
 function check_installed {
-    which $1 > /dev/null
+	which $1 >/dev/null
 
-    if [ $? = "0" ]; then
-        return 0
-    else
-        return 1
-    fi
+	if [ $? = "0" ]; then
+		return 0
+	else
+		return 1
+	fi
 }
 
 # Script to setup Python
@@ -15,28 +15,27 @@ function check_installed {
 
 # pipx
 if check_installed pipx; then
-    echo "Already installed: pipx"
+	echo "Already installed: pipx"
 else
-    python3 -m pip install --user pipx
-    python3 -m pipx ensurepath
-    source $XDG_CONFIG_HOME/zsh/.zshrc
+	python3 -m pip install --user pipx
+	python3 -m pipx ensurepath
+	source $XDG_CONFIG_HOME/zsh/.zshrc
 fi
 
 # pyenv
 if check_installed pyenv; then
-    echo "Already installed: pyenv"
+	echo "Already installed: pyenv"
 else
-    curl https://pyenv.run | bash
+	curl https://pyenv.run | bash
 
-    pyenv install -v 3.11.1
-    pyenv global 3.11.1
+	pyenv install -v 3.11.3
+	pyenv global 3.11.3
 fi
 
 # hatch
 if check_installed hatch; then
-    echo "Already installed: hatch"
+	echo "Already installed: hatch"
 else
-    pipx install hatch
-    _HATCH_COMPLETE=zsh_source hatch > $ZDOTDIR/.hatch-complete.zsh
+	pipx install hatch
+	_HATCH_COMPLETE=zsh_source hatch >$ZDOTDIR/.hatch-complete.zsh
 fi
-
