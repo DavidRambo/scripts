@@ -29,8 +29,5 @@ else
 
 	git clone https://github.com/DavidRambo/neovim_config.git ~/.config/nvim/
 
-    # Setup Packer b/c bootstrapping wont' work
-    git clone --depth 1 https://github.com/wbthomason/packer.nvim\
-     ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 fi
 
