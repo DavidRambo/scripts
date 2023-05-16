@@ -11,9 +11,9 @@ else
 	git clone --bare https://github.com/DavidRambo/dotfiles.git /home/david/repos/dotfiles/
 
 	# From atlassian.com/git/tutorials/dotfiles
-	mkdir -p .config-backup && \
-       dots checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
-       xargs -I{} mv {} .config-backup/{}
+	mkdir -p .config-backup &&
+		dots checkout 2>&1 | egrep "\s+\." | awk {'print $1'} |
+		xargs -I{} mv {} .config-backup/{}
 
 	dots checkout
 
@@ -30,4 +30,3 @@ else
 	git clone https://github.com/DavidRambo/neovim_config.git ~/.config/nvim/
 
 fi
-
