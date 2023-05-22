@@ -27,6 +27,6 @@ if [ -e /home/david/.config/nvim/.gitignore ]; then
 else
 	mkdir -p ~/.config/nvim
 
-	git clone https://github.com/DavidRambo/neovim_config.git ~/.config/nvim/
+	git clone git@github.com:DavidRambo/nvim.git
 
 fi
