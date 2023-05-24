@@ -1,0 +1,12 @@
+[Unit]
+Description=Maestral startup daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/david/repos/scripts/maestral_service.sh
+Restart=on-failure
+StandardOutput=file:%h/maestral_log_file
+
+[Install]
+WantedBy=default.target
