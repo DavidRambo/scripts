@@ -43,9 +43,9 @@ else
 	git clone https://github.com/neovim/neovim
 	cd neovim
 	sudo apt-get install -y ninja-build gettext cmake unzip curl
-	sudo apt-get install -y g++ # for tree-sitter cc1plus error
-	make CMAKE_BUILD_TYPE=RelWithDebInfo
-	sudo make install
+	sudo apt-get install -y g++ # for treesitter cc1plus error
+	make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/neovim"
+	make install
 fi
 
 # rust
