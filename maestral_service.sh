@@ -1,5 +1,7 @@
 #!/bin/bash
-# Run via systemd user service in /etc/systemd/user/maestral_service.service
+# Run via systemd user service in ~/.config/systemd/user/maestral_service.service
+# (or in /etc/systemd/user/maestral_service.service, which gets symlinked
+# from the .config location).
 # A copy of that file is preserved here.
 # Once placed in the systemd user directory,
 # install the service: systemctl --user daemon-reload
