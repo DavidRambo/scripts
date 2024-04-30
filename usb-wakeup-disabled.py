@@ -24,6 +24,7 @@ idVendor: 4653
 Boardsource Lulu
 idVendor: 4273
 """
+
 from glob import glob
 import os
 
@@ -35,9 +36,7 @@ import os
 
 # I could also program it to accept an argument that indicates a new idVendor.
 
-
 # idVendor values for USB peripherals
-# include the newline code b/c that is included in the text file
 vendor_ids = ["046d", "03a8", "4653", "4273"]
 
 dirs_list = glob("/sys/bus/usb/devices/*/")
@@ -57,6 +56,9 @@ for directory in dirs_list:
             if vendor_id.rstrip() in vendor_ids:
                 # then proceed to change 'directory/power/wakeup' to 'disabled'
                 wakeup_path = directory + "power/wakeup"
-                with open(wakeup_path, "w") as wakeup:
-                    wakeup.write("disabled")
-                    print(f"Rewrote {wakeup_path}")
+                try:
+                    with open(wakeup_path, "w") as wakeup:
+                        wakeup.write("disabled")
+                        print(f"Rewrote {vendor_id} at {wakeup_path}")
+                except PermissionError as err:
+                    print(f">>> {err} : Could not write to {vendor_id} wakeup file.")
