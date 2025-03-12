@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 # Run via systemd user service in ~/.config/systemd/user/maestral_service.service
 # (or in /etc/systemd/user/maestral_service.service, which gets symlinked
 # from the .config location).

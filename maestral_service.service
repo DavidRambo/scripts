@@ -3,10 +3,11 @@ Description=Maestral startup daemon
 After=network.target
 
 [Service]
-Type=simple
-ExecStart=/home/david/repos/scripts/maestral_service.sh
-Restart=on-failure
-StandardOutput=file:%h/maestral_log_file
+Type=notify
+ExecStart=/var/home/david/.local/share/maestral-venv/bin/python /var/home/david/.local/share/maestral-venv/bin/maestral start -f
+ExecStop=/var/home/david/.local/share/maestral-venv/bin/python /var/home/david/.local/share/maestral-venv/bin/maestral stop
+ExecStopPost=/usr/bin/env bash -c "if [ ${SERVICE_RESULT} != success ]; then notify-send Maestral 'Daemon failed'; fi"
+WatchdogSec=30s
 
 [Install]
 WantedBy=default.target
